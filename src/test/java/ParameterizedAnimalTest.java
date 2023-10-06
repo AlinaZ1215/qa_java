@@ -2,7 +2,7 @@ import com.example.Animal;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
+import static org.junit.Assert.*;
 import java.util.List;
 
 @RunWith(Parameterized.class)
@@ -24,5 +24,6 @@ public class ParameterizedAnimalTest {
     public void testGetFood() throws Exception{
         Animal animal = new Animal();
         List<String> actual = animal.getFood(animalKind);
+        assertEquals(expected, actual);
     }
-}
+    }

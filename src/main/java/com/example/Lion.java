@@ -3,13 +3,8 @@ import java.util.List;
 
 public class Lion {
     Feline feline;
-    String sex;
     boolean hasMane;
-    public Lion(String sex, Feline feline){
-        this.sex = sex;
-        this.feline = feline;
-    }
-    public Lion(String sex) throws Exception {
+    public Lion(String sex, Feline feline) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -17,7 +12,9 @@ public class Lion {
         } else {
             throw new Exception("Используйте допустимые значения пола животного - Самец или Самка");
         }
+        this.feline=feline;
     }
+
     public int getKittens() {
         return feline.getKittens();
     }
